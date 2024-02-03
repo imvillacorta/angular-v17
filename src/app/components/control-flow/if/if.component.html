@@ -1,0 +1,39 @@
+<h3>{{ '@IF' }}</h3>
+<p>Versão do angular é a <b>{{ angularVersion }}</b></p>
+<p>Idade é <b>{{ idade }}</b></p>
+
+<h4>Forma nova com Angular 17</h4>
+
+<!--FORMA NOVA-->
+
+@if (angularVersion === 17) {
+<p>A versão do Angular é a 17</p>
+}
+
+@else if (angularVersion === 16) {
+<p>A versão do Angular é a 16</p>
+}
+
+@else {
+<p>É alguma outra versão abaixo da 16</p>
+}
+
+<hr>
+
+<h4>Forma das versões anteriores do Angular 17</h4>
+
+<!--FORMA ANTIGA-->
+
+<ng-container *ngIf="idade >=18; else adolescent">
+    <p>Você é adulto</p>
+</ng-container>
+
+<ng-template #adolescent>
+    <ng-container *ngIf="idade >=15 && idade <18; else minor">
+        <p>Você é adolescente</p>
+    </ng-container>
+</ng-template>
+
+<ng-template #minor>
+    <p>Você é criança</p>
+</ng-template>
