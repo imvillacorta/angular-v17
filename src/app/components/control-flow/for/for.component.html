@@ -1,34 +1,32 @@
 <h3>{{ '@FOR' }}</h3>
-<div class="container">
-    <!-- FORMA NOVA DO ANGULAR 17 -->
-    <div class="d-flex">
-        @for (dado of dados; track $index) {
-        <ul class="list-group mb-3 me-3">
-            <li class="list-group-item">{{ dado.name }}</li>
-            <li class="list-group-item">{{ dado.age }}</li>
-            <li class="list-group-item">{{ dado.height }}</li>
-        </ul>
-        }
-        @empty {
-        <div class="alert alert-warning" role="alert">
-            Não foram encontrados dados para serem exibidos
-        </div>
-        }
+<!-- FORMA NOVA DO ANGULAR 17 -->
+<div class="d-flex">
+    @for (dado of dados; track $index) {
+    <ul class="list-group mb-3 me-3">
+        <li class="list-group-item">{{ dado.name }}</li>
+        <li class="list-group-item">{{ dado.age }}</li>
+        <li class="list-group-item">{{ dado.height }}</li>
+    </ul>
+    }
+    @empty {
+    <div class="alert alert-warning" role="alert">
+        Não foram encontrados dados para serem exibidos
     </div>
-
-    <!-- FORMA DE VERSÕES ANTERIORES AO ANGULAR 17 -->
-    <table class="table table-striped">
-        <thead>
-            <th>Nome</th>
-            <th>Idade</th>
-            <th>Altura</th>
-        </thead>
-        <tbody>
-            <tr *ngFor="let dado of dados">
-                <td>{{ dado.name }}</td>
-                <td>{{ dado.age }}</td>
-                <td>{{ dado.height }}</td>
-            </tr>
-        </tbody>
-    </table>
+    }
 </div>
+
+<!-- FORMA DE VERSÕES ANTERIORES AO ANGULAR 17 -->
+<table class="table table-striped">
+    <thead>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Altura</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dado of dados">
+            <td>{{ dado.name }}</td>
+            <td>{{ dado.age }}</td>
+            <td>{{ dado.height }}</td>
+        </tr>
+    </tbody>
+</table>
