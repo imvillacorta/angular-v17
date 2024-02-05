@@ -1,0 +1,21 @@
+<!-- on
+- idle, timer, viewport, interaction, hover, immediate, prefetch
+
+when
+- mediante condições -->
+
+@defer (on timer(5s)) {
+<b>Conteudo do componente aqui</b>
+}
+@placeholder() {
+<p>Placeholder serve para exibir algum conteudo enquanto o componente é carregado</p>
+}
+@loading(after 100ms; minimum 1s) {
+<div class="loading">Quando chega o momento do componente carregar,
+    enquanto seu chunk é criado exibe aqui algum conteudo, <br>
+    assim que o chunk terminar de ser montado o loading some e o componente aparece
+</div>
+}
+@error {
+<p>Erro ao carregar commponente</p>
+}
